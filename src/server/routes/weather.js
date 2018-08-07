@@ -10,7 +10,8 @@ router.get('/', function (req, res) {
 
   router.get('/location', (req, res) => {
 
-    const options = {
+      res.send({ express : 1});
+    /*const options = {
         url: 'https://www.reddit.com/r/funny.json',
         method: 'GET',
         headers: {
@@ -24,7 +25,7 @@ router.get('/', function (req, res) {
         let json = JSON.parse(body);
         console.log(json);
           res.send(json);
-    });
+    });*/
 
 
 
