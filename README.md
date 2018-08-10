@@ -24,19 +24,19 @@ npm run dev
 <H2>Pasos para el desarrollo del BackEnd</H2>
 
 
-<H3>1. Se ejecuto el siguiente comando para  crear el package.json file.</H3>
+<H4>1. Se ejecuto el siguiente comando para  crear el package.json file.</H4>
 
 	npm init
 
-<H3>2.Se instalo Webpack.</H3>
+<H4>2.Se instalo Webpack.</H4>
 
 	npm install webpack webpack-cli --save-dev
 
-<H3>3. Se instalo react and react-dom.</H3>
+<H4>3. Se instalo react and react-dom.</H4>
 
 	npm install react react-dom --save
 
-<H3>4. Se instalo Babel para transpilar ES6 and JSX to ES5</H3>
+<H4>4. Se instalo Babel para transpilar ES6 and JSX to ES5</H4>
 
 Transpilar es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje 		cuyo comportamiento es el mismo que el original.
 
@@ -47,23 +47,23 @@ npm install babel-core babel-loader babel-preset-env babel-preset-react --save-d
 	babel-preset-env: Preset which helps babel to convert ES6, ES7 and ES8 code to ES5.
 	babel-preset-react: Preset which Transforms JSX to JavaScript.
 
-<H3>5. Se crearon los archivos</H3>
+<H4>5. Se crearon los archivos</H4>
 
 	/src/index.js  
 
 	/src/index.html
 
 
-<H3>6. Se creo el archivo webpack.config.js para la configuracion de Webpack y generar el bundle index-bundle.js</H3>
+<H4>6. Se creo el archivo webpack.config.js para la configuracion de Webpack y generar el bundle index-bundle.js</H4>
 
 
- <H3>7. Webpack Loaders:</H3>
+ <H4>7. Webpack Loaders:</H4>
 
  npm install css-loader style-loader --save-dev
 
 
 
-<H3>8. Se creo el archivo</H3>
+<H4>8. Se creo el archivo</H4>
 .babelrc:
 
 Este archivo le dirá a babel qué preajustes usar para transpilar el código.
@@ -72,11 +72,11 @@ Aquí estamos usando dos preajustes:
 env: 	Este preset se utiliza para transpilar el código ES6 / ES7 / ES8 a ES5.
 react: este preset se usa para transpilar el código JSX a ES5.
 
-<H3>9. App.js </H3>
+<H4>9. App.js </H4>
 
 Se creó el archivo App.js para React
 
-<H3>10. Se creo el archivo index.js y index.html</H3>
+<H4>10. Se creo el archivo index.js y index.html</H4>
 
 	import React from "react";
 	import ReactDOM from "react-dom";
@@ -85,27 +85,27 @@ Se creó el archivo App.js para React
 	ReactDOM.render(<App />, document.getElementById("root"));
 
 
-<H3>11. Se instaló el plugin Html-webpack-plugin</H3>
+<H4>11. Se instaló el plugin Html-webpack-plugin</H4>
 
 
 
-<H3>12. Se configuro el plugin Html-webpack-plugin en el archivo de configuracion  webpack.config.js</H3>
+<H4>12. Se configuro el plugin Html-webpack-plugin en el archivo de configuracion  webpack.config.js</H4>
 
 
 
 
-<H3>13. Se instaló webpack-dev-server para que los cambios de codigo se actualicen automaticamente.</H3>
+<H4>13. Se instaló webpack-dev-server para que los cambios de codigo se actualicen automaticamente.</H4>
 
 
 	npm install webpack-dev-server --save-dev
 
 
-<H3>13.  Se modifico el package.json para agregar el siguiente comando para levantar el server </H3>
+<H4>13.  Se modifico el package.json para agregar el siguiente comando para levantar el server </H4>
 
 	"start": "webpack-dev-server --mode development --open --hot"
 
 
-<H3>14. Se configuró webpack.config.js para agregar el loader para sass , en este proyecto no se trabajo con sass
+<H4>14. Se configuró webpack.config.js para agregar el loader para sass , en este proyecto no se trabajo con sass
 
 
 {
@@ -113,7 +113,7 @@ Se creó el archivo App.js para React
  use: [“style-loader”, “css-loader”, “sass-loader”]
  }
 
-<H3>14. Se configuro el webpack.config.js para que levante el server</H3>
+<H4>14. Se configuro el webpack.config.js para que levante el server</H4>
 
   devServer: {
     port: 3000,
@@ -124,12 +124,12 @@ Se creó el archivo App.js para React
   },
 
 
-<H3>15. Se instalo Nodemon para que haga restart al server automaticamente.</H3>
+<H4>15. Se instalo Nodemon para que haga restart al server automaticamente.</H4>
 
 npm install --save-dev nodemon
 
 
-<H3>16. Se instalo Express para la creacion del api e Node.js
+<H4>16. Se instalo Express para la creacion del api e Node.js
 Express is a web application framework for Node.js. It is used to build our backend API’s.
 
 src/server/index.js is the entry point to the server application. Below is the src/server/index.js file
@@ -137,15 +137,16 @@ src/server/index.js is the entry point to the server application. Below is the s
 npm install --save express
 
 
-<H3>17.  Concurrently</H3>
+<H4>17.  Concurrently</H4>
 Se instalo Concurrently para ejecutar multiples comandos desde el package.json
 
 npm install concurrently --save
 
-<H2>Pasos para el desarrollo del BackEnd</H2>
-API KEY https://home.openweathermap.org/api_keys
 
- 0d155b145b14b78b8c3ba40d0e724bf0
+
+<H2>Pasos para el desarrollo del FrontEnd</H2>
+
+<H4><H4>
 
 
 Ejemplo
