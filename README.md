@@ -100,56 +100,36 @@ Se creó el archivo App.js para React
 	npm install webpack-dev-server --save-dev
 
 
-<H3>13.  Se modifico el package.json para agregar el siguiente comando para levantar el server
+<H3>13.  Se modifico el package.json para agregar el siguiente comando para levantar el server </H3>
 
 	"start": "webpack-dev-server --mode development --open --hot"
 
 
-18- Se configuro webpack.config.js para agregar el loader para sass , en este proyecto no se trabajo con sass
+<H3>14. Se configuró webpack.config.js para agregar el loader para sass , en este proyecto no se trabajo con sass
 
-webpack.config.js change the following section
+
 {
  test: /\.scss$/,
  use: [“style-loader”, “css-loader”, “sass-loader”]
  }
 
+<H3>14. Se configuro el webpack.config.js para que levante el server</H3>
 
-19 - rename css to scss
-
-
-
-
-
-
-
-20- webpack.config.js change the following section
-Webpack dev server
-Webpack dev server is used along with webpack. It provides a development server that provides live reloading for the client side code. This should be used for development only.
-
-The devServer section of webpack.config.js contains the configuration required to run webpack-dev-server which is given below.
-
-
-
-
-,
   devServer: {
     port: 3000,
     open: true,
     proxy: {
-      "/api": "http://localhost:8080"
+      "/v1": "http://localhost:8080"
     }
   },
 
 
-21 - Nodemon
-Nodemon is a utility that will monitor for any changes in the server source code and it automatically restart the server. This is used in development only.
-
-nodemon.json file is used to describe the configurations for Nodemon. Below is the nodemon.json file which I am using.
+<H3>15. Se instalo Nodemon para que haga restart al server automaticamente.</H3>
 
 npm install --save-dev nodemon
 
 
-22 -  Express
+<H3>16. Se instalo Express para la creacion del api e Node.js
 Express is a web application framework for Node.js. It is used to build our backend API’s.
 
 src/server/index.js is the entry point to the server application. Below is the src/server/index.js file
@@ -157,23 +137,12 @@ src/server/index.js is the entry point to the server application. Below is the s
 npm install --save express
 
 
-23 Concurrently
-Concurrently is used to run multiple commands concurrently. I am using it to run the webpack dev server and the backend node server concurrently in the development environment. Below are the npm/yarn script commands used.
+<H3>17.  Concurrently</H3>
+Se instalo Concurrently para ejecutar multiples comandos desde el package.json
 
 npm install concurrently --save
 
-
-
-
-	/*guarfar esto*/
-
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-
-
---------------------------------------------------------------------------
-
-
+<H2>Pasos para el desarrollo del BackEnd</H2>
 API KEY https://home.openweathermap.org/api_keys
 
  0d155b145b14b78b8c3ba40d0e724bf0
