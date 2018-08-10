@@ -24,19 +24,19 @@ npm run dev
 <H2>Pasos para el desarrollo del BackEnd</H2>
 
 
-<H3>1. See ejecuto el siguiente comando para  crear el package.json file.</H3>
+<H3>1. Se ejecuto el siguiente comando para  crear el package.json file.</H3>
 
 	npm init
 
-2- Se instalo Webpack
+<H3>2.Se instalo Webpack.</H3>
 
 	npm install webpack webpack-cli --save-dev
 
-3- Se instalo react and react-dom
+<H3>3. Se instalo react and react-dom.</H3>
 
 	npm install react react-dom --save
 
-4- Se instalo Babel para transpilar ES6 and JSX to ES5
+<H3>4. Se instalo Babel para transpilar ES6 and JSX to ES5</H3>
 
 Transpilar es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje 		cuyo comportamiento es el mismo que el original.
 
@@ -47,23 +47,23 @@ npm install babel-core babel-loader babel-preset-env babel-preset-react --save-d
 	babel-preset-env: Preset which helps babel to convert ES6, ES7 and ES8 code to ES5.
 	babel-preset-react: Preset which Transforms JSX to JavaScript.
 
-5 . Se crearon los archivos
+<H3>5. Se crearon los archivos</H3>
 
 	/src/index.js  
 
 	/src/index.html
 
 
-6 -  Se creo el archivo webpack.config.js para la configuracion de Webpack y generar el bundle index-bundle.js
+<H3>6. Se creo el archivo webpack.config.js para la configuracion de Webpack y generar el bundle index-bundle.js</H3>
 
 
- 7- Webpack Loaders:
+ <H3>7. Webpack Loaders:</H3>
 
  npm install css-loader style-loader --save-dev
 
 
 
-8- Se creo el archivo
+<H3>8. Se creo el archivo</H3>
 .babelrc:
 
 Este archivo le dirá a babel qué preajustes usar para transpilar el código.
@@ -72,12 +72,11 @@ Aquí estamos usando dos preajustes:
 env: 	Este preset se utiliza para transpilar el código ES6 / ES7 / ES8 a ES5.
 react: este preset se usa para transpilar el código JSX a ES5.
 
-
-9 -  App.js
+<H3>9. App.js </H3>
 
 Se creó el archivo App.js para React
 
-10- Se creo el archivo index.js y index.html
+<H3>10. Se creo el archivo index.js y index.html</H3>
 
 	import React from "react";
 	import ReactDOM from "react-dom";
@@ -86,20 +85,22 @@ Se creó el archivo App.js para React
 	ReactDOM.render(<App />, document.getElementById("root"));
 
 
-11 . Se instaló el plugin Html-webpack-plugin
+<H3>11. Se instaló el plugin Html-webpack-plugin</H3>
 
 
 
-12 - Se configuro el plugin Html-webpack-plugin en el archivo de configuracion  webpack.config.js
+<H3>12. Se configuro el plugin Html-webpack-plugin en el archivo de configuracion  webpack.config.js</H3>
 
 
 
-16-  Se instaló webpack-dev-server para que los cambios de codigo se actualicen automaticamente.
+
+<H3>13. Se instaló webpack-dev-server para que los cambios de codigo se actualicen automaticamente.</H3>
+
 
 	npm install webpack-dev-server --save-dev
 
 
-17-  Se modifico el package.json para agregar el siguiente comando para levantar el server
+<H3>13.  Se modifico el package.json para agregar el siguiente comando para levantar el server
 
 	"start": "webpack-dev-server --mode development --open --hot"
 
