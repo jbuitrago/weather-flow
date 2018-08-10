@@ -16,7 +16,7 @@ git clone https://github.com/jbuitrago/weather-flow2.git
 npm run dev
 
 <H2>Consideraciones</H2>
-Se desarrollo en backend y el FrontEnd
+Se desarrollo el backEnd y el FrontEnd
 Se creo la cuenta en openmapsweather con el Api que se encuentra en src/server/weather
 
 <H2>Pasos para el desarrollo del BackEnd</H2>
@@ -32,7 +32,7 @@ Se creo la cuenta en openmapsweather con el Api que se encuentra en src/server/w
 
 	npm install react react-dom --save
 
-4- Se Instalo Babel para transpilar ES6 and JSX to ES5
+4- Se instalo Babel para transpilar ES6 and JSX to ES5
 
 		Transpilar es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje 		cuyo comportamiento es el mismo que el original.
 
@@ -44,70 +44,36 @@ Se creo la cuenta en openmapsweather con el Api que se encuentra en src/server/w
 	babel-preset-react: Preset which Transforms JSX to JavaScript.
 
 5 . Se crearon los archivos
+
 	/src/index.js  
+
 	/src/index.html
 
 
-6  crear webpack.config.js
-
-	const path = require("path");
-
-	module.exports = {
-	  entry: "./src/index.js",
-	  output: {
-	    path: path.join(__dirname, "/dist"),
-	    filename: "index_bundle.js"
-	  }
-	};
-
-	In the above code, Webpack will bundle all of our JavaScript files into index-bundle.js file inside the /dist directory.
+6 -  Se creo el archivo webpack.config.js para la configuracion de Webpack y generar el bundle index-bundle.js
 
 
  7- Webpack Loaders:
 
-	Here babel-loader is used to load our JSX/JavaScript files and css-loader is used to load and bundle all of the CSS files into one file and 	 style-loader will add all of the styles inside the style tag of the document.
-
-	 Before Webpack can use css-loader and style-loader we have to install them as a dev-dependency.
+ npm install css-loader style-loader --save-dev
 
 
-	npm install css-loader style-loader --save-dev
 
-
-8-
+8- Se creo el archivo
 .babelrc:
-Now create a .babelrc file inside root of the project directory with the following contents inside of it.
+
+Este archivo le dirá a babel qué preajustes usar para transpilar el código.
+Aquí estamos usando dos preajustes:
+
+env: 	Este preset se utiliza para transpilar el código ES6 / ES7 / ES8 a ES5.
+react: este preset se usa para transpilar el código JSX a ES5.
 
 
+9 -  App.js
 
-This file will tell babel which presets to use for transpiling the code.Here we are using two presets:
+Se creó el archivo App.js para React
 
-env: This preset is used to transpile the ES6/ES7/ES8 code to ES5.
-react: This preset is used to transpile JSX code to ES5.
-
-
-
-
-9  - compilar para dev  
-
-
-	npm start
-
-After executing the above command you will see index_bundle.js file created under the /dist directory which will contain transpiled ES5 code from index.js file.
-
-
-
-
-10 -  App.js
-	Create an App.js file inside the components folder of the src folder with the following contents inside of it.
-
-
-11- App.css:
-	Create an App.css file inside the styles folder of the src folder with the following contents inside of it.
-
-
-12-
-	Now modify the index.js file that we created earlier to contain following lines of code.
-
+10- Se creo el archivo index.js y index.html
 
 	import React from "react";
 	import ReactDOM from "react-dom";
@@ -116,28 +82,16 @@ After executing the above command you will see index_bundle.js file created unde
 	ReactDOM.render(<App />, document.getElementById("root"));
 
 
-13 . Installing Html-webpack-plugin:
-	Now we also need to install html-webpack-plugin, this plugin generates an HTML file, injects the script inside the HTML file and writes this 	file to dist/index.html.
-
-	Install the html-webpack-plugin as a dev-dependency:
+11 . Se instaló el plugin Html-webpack-plugin
 
 
 
-14  
-	Now we need to configure this plugin inside the webpack.config.js file, add the following lines of code inside it.
+12 - Se configuro el plugin Html-webpack-plugin en el archivo de configuracion  webpack.config.js
 
 
-15. compilar de nuevo
 
-	npm start
+16-  Se instaló webpack-dev-server para que los cambios de codigo se actualicen automaticamente.
 
-You will get output inside the /dist folder of project, Now open the index.html in a web browser, you will see the text “My React App!” inside of it.
-
-16-  But this approach has a downside that you have to manually refresh the webpage, in order to see the changes you have made. To have webpack watch 	our changes and refresh webpage whenever any change is made to our components, we can install webpack-dev-server.
-
-
-	Installing Webpack-dev-server:
-	Install webpack-dev-server as a dev-dependency
 
 	npm install webpack-dev-server --save-dev
 
