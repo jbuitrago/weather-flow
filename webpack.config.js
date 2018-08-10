@@ -10,21 +10,25 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   devServer: {
     port: 3000,
+    historyApiFallback: true,
     open: true,
     proxy: {
-      "/api": "http://localhost:8080"
+      "/v1": "http://localhost:8080"
     }
   },
   plugins: [
