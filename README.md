@@ -15,16 +15,20 @@ git clone https://github.com/jbuitrago/weather-flow2.git
 
 npm run dev
 
-<H2>Consideraciones</H2>
-Se desarrollo el backEnd y el FrontEnd
-Se creo la cuenta en openmapsweather con el Api que se encuentra en src/server/weather
+<H2>Entregables</H2>
+
+- El comando "npm run dev" levanta el FrontEnd en la ruta http://localhost:3000  y tambien levanta el BackeEnd erl el puerto 8080 pero a traves de WebPack se puede ver el api en la ruta http://localhost:3000/v1
+
+- Se utilizo el Api de clima recomendado "openmapsweather" , el API_KEY se encuentra configurado en el archivo  src/server/weather
 
 <H2>Pasos para el desarrollo del BackEnd</H2>
-1 - Para crear el package.json file.
+
+
+<H3>1. See ejecuto el siguiente comando para  crear el package.json file.</H3>
 
 	npm init
 
-2- Webpack
+2- Se instalo Webpack
 
 	npm install webpack webpack-cli --save-dev
 
@@ -34,9 +38,9 @@ Se creo la cuenta en openmapsweather con el Api que se encuentra en src/server/w
 
 4- Se instalo Babel para transpilar ES6 and JSX to ES5
 
-		Transpilar es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje 		cuyo comportamiento es el mismo que el original.
+Transpilar es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje 		cuyo comportamiento es el mismo que el original.
 
-	npm install babel-core babel-loader babel-preset-env babel-preset-react --save-dev
+npm install babel-core babel-loader babel-preset-env babel-preset-react --save-dev
 
 	babel-core: Transforms ES6 code to ES5
 	babel-loader: Webpack helper to transpile code, given the the preset.
@@ -92,22 +96,15 @@ Se creó el archivo App.js para React
 
 16-  Se instaló webpack-dev-server para que los cambios de codigo se actualicen automaticamente.
 
-
 	npm install webpack-dev-server --save-dev
 
 
-17  Change the package.json start script like below:
+17-  Se modifico el package.json para agregar el siguiente comando para levantar el server
 
-"start": "webpack-dev-server --mode development --open --hot"
-
-I have added two flags --open and --hot which opens and refreshes the web page whenever any change is made to components.
-
-Now run the below command in the terminal:
-
-npm start
+	"start": "webpack-dev-server --mode development --open --hot"
 
 
-18 SASS loader
+18- Se configuro webpack.config.js para agregar el loader para sass , en este proyecto no se trabajo con sass
 
 webpack.config.js change the following section
 {
