@@ -1,3 +1,22 @@
+<H1> Pronostico del tiempo</H1>
+
+<H2>Requerimientos</H2>
+
+	Node v8.11.3
+	npm
+
+<H2>Instalacion</H2>
+
+-Clonar el proyecto
+
+git clone https://github.com/jbuitrago/weather-flow2.git
+
+-Ejecutar el comando
+
+npm run devServer
+
+
+
 https://hackernoon.com/how-to-build-a-react-project-from-scratch-using-webpack-4-and-babel-56d4a26afd32
 
 1 -  This will create a package.json file.
@@ -219,12 +238,19 @@ Ejemplo
 http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=0d155b145b14b78b8c3ba40d0e724bf0
 
 
+fromElement
+
+npm install --save react-bootstrap
+
+Instalacio
 
 1 - npm install --save request
+2-npm run dev
 
 
-2 - npm install --save react-route
-	Por ahora no
 
 
-3 -npm install --save react-bootstrap
+---Test
+npm install --save-dev jest babel-jest
+
+npm install --save-dev enzyme enzyme-adapter-react-16 enzyme-to-json
