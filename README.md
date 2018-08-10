@@ -13,34 +13,28 @@ git clone https://github.com/jbuitrago/weather-flow2.git
 
 -Ejecutar el comando
 
-npm run devServer
+npm run dev
 
+<H2>Consideraciones</H2>
+Se desarrollo en backend y el FrontEnd
+Se creo la cuenta en openmapsweather con el Api que se encuentra en src/server/weather
 
-
-https://hackernoon.com/how-to-build-a-react-project-from-scratch-using-webpack-4-and-babel-56d4a26afd32
-
-1 -  This will create a package.json file.
+<H2>Pasos para el desarrollo del BackEnd</H2>
+1 - Para crear el package.json file.
 
 	npm init
 
-2- Webpack is a module bundler that lets us bundle our project files into a single file for production. So let’s add webpack to our project.
-
+2- Webpack
 
 	npm install webpack webpack-cli --save-dev
 
-The above command will add webpack and webpack-cli as a dev dependency to our project.We installed webpack-cli so that we can use webpack in the command line.
-
-
-3- Install react and react-dom as a dependency.
+3- Se instalo react and react-dom
 
 	npm install react react-dom --save
 
-4- Installing Babel:
+4- Se Instalo Babel para transpilar ES6 and JSX to ES5
 
-	In order for React to work, we need to install Babel alongside with it. We need Babel to transpile ES6 and JSX to ES5.
-	Install babel-core, babel-loader, babel-preset-env, babel-preset-react as a dev dependency.
-
-	Transpilar es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje 		cuyo comportamiento es el mismo que el original.
+		Transpilar es generar a partir de código en un lenguaje código en otro lenguaje. Es decir, un programa produce otro programa en otro lenguaje 		cuyo comportamiento es el mismo que el original.
 
 	npm install babel-core babel-loader babel-preset-env babel-preset-react --save-dev
 
@@ -49,9 +43,9 @@ The above command will add webpack and webpack-cli as a dev dependency to our pr
 	babel-preset-env: Preset which helps babel to convert ES6, ES7 and ES8 code to ES5.
 	babel-preset-react: Preset which Transforms JSX to JavaScript.
 
-
-
-5 . crear /src/index.js  /src/index.html
+5 . Se crearon los archivos
+	/src/index.js  
+	/src/index.html
 
 
 6  crear webpack.config.js
