@@ -11,36 +11,67 @@
 
 git clone https://github.com/jbuitrago/weather-flow2.git
 
--Ejecutar el comando
+-Ingresar al directorio
+
+cd weather-flow2
+
+-Instalar las dependencias
+
+npm install
+
+-Para levantar la aplicación se debe ejecutar el comando
 
 npm run dev
+
+-También se puede levantar el server
+
+npm run server
+
+-También se puede levantar el cliente
+
+npm run client
+
+
+package.json
 
 <H2>Entregables</H2>
 
 <H3>BackEnd</H3>
 
-Se creó el backend http://localhost:8080 src\server\index.js con los siguientes rutas definidas en el script src\server\routes\weather.js:
+Se creó el backend con node y express con el script src\server\index.js con las siguientes rutas definidas en el script src\server\routes\weather.js:
 
-http://localhost:3000/v1  
-http://localhost:3000/v1/cities  (Listado de ciudades)
-http://localhost:3000/v1/location (Ubicacion actual obtenida desde http://ip-api.com/json)
-http://localhost:3000/v1/current/:city ( Estado actual del clima de una ciudad)
-http://localhost:3000/v1/current/:lat/:lon  ( Estado actual del clima de una coordenada)
-http://localhost:3000/v1/forecast/:city  (Pronóstico del clima de los próximos 5 dias de una ciudad)
-http://localhost:3000/v1/current/:lat/:lon  (Pronóstico del clima de los próximos 5 dias de una coordenada)
+- http://localhost:3000/v1  
+- http://localhost:3000/v1/cities  (Listado de ciudades)
+- http://localhost:3000/v1/location (Ubicacion actual obtenida desde http://ip-api.com/json)
+- http://localhost:3000/v1/current/:city ( Estado actual del clima de una ciudad)
+- http://localhost:3000/v1/current/:lat/:lon  ( Estado actual del clima de una coordenada)
+- http://localhost:3000/v1/forecast/:city  (Pronóstico del clima de los próximos 5 días de una ciudad)
+- http://localhost:3000/v1/current/:lat/:lon  (Pronóstico del clima de los próximos 5 días de una coordenada)
+
+Decidi hacer 2 rutas separadas de current y forecast por ciudad o por coordenadas para que se pudieran acceder separadamente, tambien se podia hacerlo en una sola ruta, esta fue mi solucion.
 
 - El comando "npm run dev" levanta el FrontEnd en la ruta http://localhost:3000  y tambien levanta el BackeEnd en el puerto 8080 pero a través de WebPack se puede ver el api en la ruta http://localhost:3000/v1
 
 - Se utilizó el Api de clima recomendado "openmapsweather" , el API_KEY se encuentra configurado en el archivo  src/server/weather
 
+-No se hizo ningún test
+
 <H3>FrontEnd</H3>
 
+Cuando se ejecuta el comando “npm run dev” levanta la aplicación en la ruta http://localhost:3000
+
+Inicialmente busca la ubicación actual a través de ip_api y le envía las coordenadas obtenidas al componente que muestra el “clima  actual” y tambien le envia las cordenadas al componente “Pronostico proximos 5 dias”
+
+Tambien se puede observar que hay un desplegable de ciudades que ya se explico en el punto anterior de donde salen, estas ciudades ya tienen los codigos originales, cuando selecciona alguna ciudad hace el mismo proceso anterior, pero esta vez no envia las coordenadas sino directamente el id de la ciudad al componente de “clima  actual”  y despues al componente de “Pronostico proximos 5 dias” , la parte tecnica se detalla al final de este documento en el Proceso de desarrollo del Front End.
+
+No hice casos de Test por tiempos, pero deje la definición en el directorio _test
+
+Quise hacer la aplicacion completa ya que tengo conocimientos también con Backend para este tipo de configuraciones.
+
+<H2>Proceso para el desarrollo del BackEnd</H2>
 
 
-<H2>Pasos para el desarrollo del BackEnd</H2>
-
-
-<H4>1. Se ejecuto el siguiente comando para  crear el package.json file.</H4>
+<H4>1. Se ejecutó el siguiente comando para  crear el package.json file.</H4>
 
 	npm init
 
@@ -164,3 +195,13 @@ npm install concurrently --save
 <H4>1.Se instalo la de dependencia para trabajar el diseño del sitio con Bootstrap<H4>
 
 	npm install --save react-bootstrap
+
+<H4>2.Se crearon los siguientes componentes<H4>
+
+
+-src\screens\Home\Home.jsx
+
+-src\components\Title.jsx
+-src\components\FormCities.jsx
+-src\components\Current.jsx
+-src\components\Forecast.jsx
