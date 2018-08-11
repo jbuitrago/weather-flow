@@ -189,11 +189,11 @@ npm install concurrently --save
 
 <H2>Pasos para el desarrollo del FrontEnd</H2>
 
-<H4>1.Se instalo la de dependencia para trabajar el diseño del sitio con Bootstrap<H4>
+<H4>1.Se instalo la de dependencia para trabajar el diseño del sitio con Bootstrap</H4>
 
 	npm install --save react-bootstrap
 
-<H4>2.Se crearon los siguientes componentes<H4>
+<H4>2.Se crearon los siguientes componentes</H4>
 
 
 -src\screens\Home\Home.jsx

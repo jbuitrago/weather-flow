@@ -31,7 +31,6 @@ const Forecast = props => (
 	</Table>
 </Panel.Body>
 
-
 );
 
 export default Forecast;

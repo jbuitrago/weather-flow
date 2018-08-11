@@ -1,5 +1,6 @@
 import React from "react";
 
+import Title from "../../components/Title";
 import FormCities from "../../components/FormCities";
 import Current from "../../components/Current";
 import Forecast from "../../components/Forecast";
@@ -15,10 +16,6 @@ class Home extends React.Component {
         current:  [],
         forecast: [],
         city: null,
-        country: null,
-        weather_main: null,
-        weather_description: null,
-        temperature:null,
         forecastList: []
       };
 
@@ -31,20 +28,19 @@ class Home extends React.Component {
   }
 
 
-
+/*Listado de ciudades */
 _loadCities(){
-  /*Listado de ciudades */
-      fetch('/v1/cities')
-      .then(res => {
+  fetch('/v1/cities')
+    .then(res => {
         return res.json();
       })
       .then(cities => {
-          this.setState({ cities })
+        this.setState({ cities })
       });
 };
 
-_loadLocation(){
 /*Obtener datos de ubicacion a partir de la ip_api */
+_loadLocation(){
   fetch('/v1/location')
   .then(res => {
     return res.json();
@@ -58,9 +54,8 @@ _loadLocation(){
   });
 
 }
-
+/*Obtener datos de ubicacion a partir de la ip_api */
 _loadCurrentByCity(city){
-  /*Obtener datos de ubicacion a partir de la ip_api */
   fetch('/v1/current/'+ city)
      .then(res => {
        return res.json();
@@ -78,9 +73,8 @@ _loadCurrentByCity(city){
      }).catch (function (error) {
      });
 };
-
+/* Obtener el pronostico del Clima de una ciudad*/
 _loadForecastByCity(city){
-  /* Obtener el pronostico del Clima de una ciudad*/
     fetch('/v1/forecast/'+ city)
        .then(res => {
          return res.json();
@@ -102,11 +96,8 @@ _loadForecastByCity(city){
        }).catch (function (error) {
        });
 };
-
-
+/* Obtener Clima Actual con las coordenadas Latitud/Longitud de ip_api*/
 _loadCurrentByPosition(lat,lon){
-  /* Obtener Clima Actual con las coordenadas Latitud/Longitud de ip_api*/
-
   fetch('/v1/current/'+lat+'/'+lon)
     .then(res => {
       return res.json();
@@ -126,9 +117,8 @@ _loadCurrentByPosition(lat,lon){
 
 
 };
-
+/* Obtener Pronostico del Clima  con las coordenadas Latitud/Longitud de ip_api*/
 _loadForecasteByPosition(lat,lon){
-  /* Obtener Pronostico del Clima  con las coordenadas Latitud/Longitud de ip_api*/
     fetch('/v1/forecast/'+lat+'/'+lon)
       .then(res => {
         return res.json();
@@ -160,7 +150,7 @@ componentDidMount() {
 
 /* Obtener Datos */
 _getWeather (event)  {
-      var city=event.target.value;
+  var city=event.target.value;
       /*Evitar el Submit*/
       event.preventDefault();
 
@@ -176,22 +166,18 @@ _getWeather (event)  {
       }
 };
   render() {
-
     return (
-
-  <Jumbotron>
-
+      <Jumbotron>
         <Panel bsStyle="success">
-
-          <Panel.Body>
-
-            <h1>Clima del Mundo</h1>
+            <Panel.Body>
+              {/*Componente para el Tiulo*/}
+              <Title />
           {/*Componente para el listado de ciudades*/}
             <FormCities cities ={this.state.cities}  _getWeather={this._getWeather} />
 
             </Panel.Body>
         </Panel>
-
+        {/*Panel Clima Actual*/}
         <Panel bsStyle="success">
           <Panel.Heading>
             <Panel.Title componentClass="h3">Clima Actual</Panel.Title>
@@ -206,18 +192,15 @@ _getWeather (event)  {
 
           />
         </Panel>
-
+        {/*Pronòstico proximos  5 dìas*/}
         <Panel bsStyle="success">
           <Panel.Heading>
-            <Panel.Title componentClass="h3">Pronòstico a 5 dìas</Panel.Title>
+            <Panel.Title componentClass="h3">Pronòstico pròximos 5 dìas</Panel.Title>
           </Panel.Heading>
           {/*Componente para el pronostico del clima*/}
            <Forecast forecast = {this.state.forecast} />
         </Panel>
-
-
       </Jumbotron>
-
     );
   }
 };
