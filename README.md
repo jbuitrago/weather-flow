@@ -31,9 +31,6 @@ npm run server
 
 npm run client
 
-
-package.json
-
 <H2>Entregables</H2>
 
 <H3>BackEnd</H3>
@@ -64,7 +61,7 @@ Inicialmente busca la ubicación actual a través de ip_api y le envía las coor
 
 Tambien se puede observar que hay un desplegable de ciudades que ya se explico en el punto anterior de donde salen, estas ciudades ya tienen los codigos originales, cuando selecciona alguna ciudad hace el mismo proceso anterior, pero esta vez no envia las coordenadas sino directamente el id de la ciudad al componente de “clima  actual”  y despues al componente de “Pronostico proximos 5 dias” , la parte tecnica se detalla al final de este documento en el Proceso de desarrollo del Front End.
 
-No hice casos de Test por tiempos, pero deje la definición en el directorio _test
+No hice casos de Test por tiempos, pero deje la definición en el directorio src/_test
 
 Quise hacer la aplicacion completa ya que tengo conocimientos también con Backend para este tipo de configuraciones.
 
@@ -201,7 +198,22 @@ npm install concurrently --save
 
 -src\screens\Home\Home.jsx
 
+Esta página principal contiene los demás componentes descritos a continuación.
+
+Se encarga de mostrar inicialmente un desplegable de ciudades obtenidas accediendo al api de /cities , también obtiene  el clima actual accediendo al api /current  y el pronostico de los 5 dias accediendo al api /forecast enviandole las coordenadas de latitud y longitud obtenidas accediendo al api /location
+
 -src\components\Title.jsx
+
+Este componente es muy básico ya que solamente muestra el Tìtulo Principal
+
 -src\components\FormCities.jsx
+
+Este componente muestra el desplegable de ciudades mediando las props que le envia el contenedor Home, cuando se selecciona una ciudad, llama a una función que se encuentra en home llamada getWeather la cual se encarga de obtener el clima actual del api /current y el l pronóstico de los 5 días accediendo al api /forecast  pero esta vez envia la ciudad seleccionada.
+
 -src\components\Current.jsx
+
+Como se describió anteriormente este componente se encarga de mostrar el clima actual a través de las props que le envía el contenedor Home.
+
 -src\components\Forecast.jsx
+
+Como se describió anteriormente este componente se encarga de mostrar tabla de pronóstico a través de las props que le envía el contenedor Home.
